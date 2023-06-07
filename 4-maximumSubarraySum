@@ -1,0 +1,27 @@
+#include <bits/stdc++.h> 
+long long maxSubarraySum(int arr[], int n)
+{
+    /*
+        Don't write main().
+        Don't read input, it is passed as function argument.    
+        No need to print anything.
+        Taking input and printing output is handled automatically.
+    */
+    long long maxsofar=INT_MIN;
+    long long maximum=0;
+    for(int i=0;i<n;i++)
+    {
+        maximum+=arr[i];
+        if(maxsofar<maximum)
+        {
+            maxsofar=maximum;
+        }
+        if(maximum<0)
+            maximum=0;
+    }
+    if(maxsofar<0)
+        maxsofar=0;
+
+    return maxsofar;
+
+}
